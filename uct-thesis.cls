@@ -78,6 +78,8 @@
 	\pagestyle{fancy}
 }
 \g@addto@macro\appendix{
-	\pagenumbering{Alph}
 	\pagestyle{plain}
+}
+\newcommand{\backmatter}{
+	\@empty
 }
