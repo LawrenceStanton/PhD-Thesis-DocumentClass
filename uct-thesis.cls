@@ -16,7 +16,7 @@
 
 \newcommand{\monthname}{%
 	\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi}
-\renewcommand{\@date}{\monthname \space \the\year}
+\renewcommand{\@date}{\monthname, \the\year}
 
 \LoadClassWithOptions{report}
 
@@ -45,7 +45,12 @@
 			\vspace{0.5in}
 			{
 				\large
-				A thesis submitted in fulfilment of the requirements for the degree of \@degree{} at the University of Cape Town.
+				\begin{minipage}{0.7\textwidth}
+					\centering
+					A thesis submitted in fulfilment of the requirements for the degree of\\
+					\@degree{}\\
+					in the University of Cape Town.
+				\end{minipage}
 				\par
 			}
 			\vfill
@@ -53,12 +58,20 @@
 				\includesvg[width=0.5\textwidth]{uct-logo.svg}
 				\par
 			}
-			\vspace{0.5in}
+			\vfill
 			{
 				\large
-				\@date
+				Cape Town, South Africa \hfill \@date
 				\par
 			}
 		\end{center}
 	\end{titlepage}
 }
+
+\newcommand{\frontmatter}{
+	\pagenumbering{roman}
+}
+\newcommand{\mainmatter}{
+	\pagenumbering{arabic}
+}
+\g@addto@macro\appendix{\pagenumbering{Alph}}
