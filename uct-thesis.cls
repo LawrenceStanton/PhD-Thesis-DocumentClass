@@ -4,6 +4,7 @@
 \RequirePackage[
 	a4paper,
 ]{geometry}
+\RequirePackage{fancyhdr}
 
 \RequirePackage{svg}
 \RequirePackage{graphicx}
@@ -11,10 +12,10 @@
 
 \RequirePackage[utf8]{inputenc}
 
-\newcommand{\supervisors}[1]{\newcommand{\@supervisors}{#1}}
-\newcommand{\degree}[1]{\newcommand{\@degree}{#1}}
+\newcommand*{\supervisors}[1]{\newcommand{\@supervisors}{#1}}
+\newcommand*{\degree}[1]{\newcommand{\@degree}{#1}}
 
-\newcommand{\monthname}{%
+\newcommand*{\monthname}{%
 	\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi}
 \renewcommand{\@date}{\monthname, \the\year}
 
@@ -72,6 +73,11 @@
 	\pagenumbering{roman}
 }
 \newcommand{\mainmatter}{
+	\cleardoublepage
 	\pagenumbering{arabic}
+	\pagestyle{fancy}
 }
-\g@addto@macro\appendix{\pagenumbering{Alph}}
+\g@addto@macro\appendix{
+	\pagenumbering{Alph}
+	\pagestyle{plain}
+}
