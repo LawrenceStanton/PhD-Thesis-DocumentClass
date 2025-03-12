@@ -32,6 +32,8 @@
 			}
 			\vfill
 			{
+				{\textit{by}}\\
+				\vspace{0.05in}
 				\large
 				\bfseries
 				\@author
@@ -39,7 +41,9 @@
 			}
 			\vspace{0.2in}
 			{
-				\textit{Supervised by}\\
+				{\textit{supervised by}}\\
+				\vspace{0.05in}
+				\large
 				\@supervisors
 				\par
 			}
@@ -48,7 +52,7 @@
 				\large
 				\begin{minipage}{0.7\textwidth}
 					\centering
-					A thesis submitted in fulfilment of the requirements for the degree of\\
+					A thesis prepared in fulfilment of the requirements for the degree of\\
 					\@degree{}\\
 					in the University of Cape Town.
 				\end{minipage}
