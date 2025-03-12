@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uct-thesis}[2025/03/07 v1.0 UCT PhD Thesis]
 
+\newcommand{\classpath}[1]{\newcommand{\@classpath}{#1}}
+
 \RequirePackage[
 	a4paper,
 ]{geometry}
@@ -8,7 +10,6 @@
 
 \RequirePackage{svg}
 \RequirePackage{graphicx}
-\graphicspath{{Img/}}
 
 \RequirePackage[utf8]{inputenc}
 
@@ -60,7 +61,7 @@
 			}
 			\vfill
 			{
-				\includesvg[width=0.5\textwidth]{uct-logo.svg}
+				\includesvg[width=0.5\textwidth]{\@classpath/Img/uct-logo.svg}
 				\par
 			}
 			\vfill
