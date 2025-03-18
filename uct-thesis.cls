@@ -22,6 +22,16 @@
 
 \LoadClassWithOptions{report}
 
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\if@twoside
+	\fancyhead[LO, RE]{\nouppercase{\rightmark}}
+\else
+	\fancyhead[LE, RO]{\nouppercase{\rightmark}}
+\fi
+
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 		\begin{center}
