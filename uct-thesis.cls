@@ -6,6 +6,7 @@
 \RequirePackage[
 	a4paper,
 ]{geometry}
+\RequirePackage{setspace}
 \RequirePackage{fancyhdr}
 
 \RequirePackage{svg}
@@ -86,11 +87,12 @@
 
 \newcommand{\frontmatter}{
 	\pagenumbering{roman}
-}
+	}
 \newcommand{\mainmatter}{
 	\cleardoublepage
 	\pagenumbering{arabic}
 	\pagestyle{fancy}
+	\onehalfspacing
 }
 \g@addto@macro\appendix{
 	\pagestyle{plain}
