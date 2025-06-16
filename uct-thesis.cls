@@ -14,6 +14,8 @@
 
 \RequirePackage[utf8]{inputenc}
 
+
+
 \newcommand*{\supervisors}[1]{\newcommand{\@supervisors}{#1}}
 \newcommand*{\degree}[1]{\newcommand{\@degree}{#1}}
 
@@ -100,3 +102,45 @@
 \newcommand{\backmatter}{
 	\@empty
 }
+
+\newcommand{\summary}[1]{
+	\begin{adjustwidth}{2em}{0em}
+		\begin{flushright}
+		\singlespacing
+		\small
+		\textit{
+			#1
+		}
+	\end{flushright}
+\end{adjustwidth}
+}
+
+\makeatletter
+\newcounter{reaction}
+\renewcommand{\thereaction}{R\,\thechapter.\arabic{reaction}}
+\@addtoreset{reaction}{chapter}
+\newenvironment{reaction}{
+	\refstepcounter{reaction}
+	\begin{equation}
+		\renewcommand{\theequation}{\thereaction}
+}{
+	\end{equation}
+}
+\newenvironment{reaction*}{
+	\begin{equation*}
+}{
+	\end{equation*}
+}
+
+\newenvironment{reactions}{
+	\refstepcounter{reaction}
+	\renewcommand{\theequation}{\thereaction}
+}{}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\predisplaypenalty=10000
+\postdisplaypenalty=10000
+\interlinepenalty=0
