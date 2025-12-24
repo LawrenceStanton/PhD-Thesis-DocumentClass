@@ -68,7 +68,7 @@
 					\centering
 					A thesis prepared in fulfilment of the requirements for the degree of\\
 					\@degree{}\\
-					in the University of Cape Town.
+					within the University of Cape Town.
 				\end{minipage}
 				\par
 			}
