@@ -14,8 +14,6 @@
 
 \RequirePackage[utf8]{inputenc}
 
-
-
 \newcommand*{\supervisors}[1]{\newcommand{\@supervisors}{#1}}
 \newcommand*{\degree}[1]{\newcommand{\@degree}{#1}}
 
@@ -24,6 +22,8 @@
 \renewcommand{\@date}{\monthname, \the\year}
 
 \LoadClassWithOptions{report}
+
+\RequirePackage[addtotoc]{abstract}
 
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \fancyhf{}
@@ -89,7 +89,7 @@
 
 \newcommand{\frontmatter}{
 	\pagenumbering{roman}
-	}
+}
 \newcommand{\mainmatter}{
 	\cleardoublepage
 	\pagenumbering{arabic}
@@ -106,13 +106,13 @@
 \newcommand{\summary}[1]{
 	\begin{adjustwidth}{2em}{0em}
 		\begin{flushright}
-		\singlespacing
-		\small
-		\textit{
-			#1
-		}
-	\end{flushright}
-\end{adjustwidth}
+			\singlespacing
+			\small
+			\textit{
+				#1
+			}
+		\end{flushright}
+	\end{adjustwidth}
 }
 
 \makeatletter
@@ -122,7 +122,7 @@
 \newenvironment{reaction}{
 	\refstepcounter{reaction}
 	\begin{equation}
-		\renewcommand{\theequation}{\thereaction}
+	\renewcommand{\theequation}{\thereaction}
 }{
 	\end{equation}
 }
