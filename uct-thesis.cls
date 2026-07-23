@@ -121,10 +121,8 @@
 \@addtoreset{reaction}{chapter}
 \newenvironment{reaction}{
 	\refstepcounter{reaction}
-	\begin{equation}
 	\renewcommand{\theequation}{\thereaction}
 }{
-	\end{equation}
 }
 \newenvironment{reaction*}{
 	\begin{equation*}
