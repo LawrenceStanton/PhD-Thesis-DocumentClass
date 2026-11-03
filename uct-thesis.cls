@@ -1,13 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uct-thesis}[2025/03/07 v1.0 UCT PhD Thesis]
 
+\LoadClassWithOptions{report}
+
 \newcommand{\classpath}[1]{\newcommand{\@classpath}{#1}}
 
 \RequirePackage[
 	a4paper,
+	top=3.2cm,
+	bottom=3.2cm,
 ]{geometry}
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
 
 \RequirePackage{svg}
 \RequirePackage{graphicx}
@@ -20,8 +25,6 @@
 \newcommand*{\monthname}{%
 	\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi}
 \renewcommand{\@date}{\monthname, \the\year}
-
-\LoadClassWithOptions{report}
 
 \RequirePackage[addtotoc]{abstract}
 
@@ -86,6 +89,15 @@
 		\end{center}
 	\end{titlepage}
 }
+
+% Format chapter headings as a centred two-line heading at the top of the page.
+\titleformat{\chapter}[display]
+{\centering\LARGE\bfseries}
+{\chaptertitlename\ \thechapter}
+{0.5\baselineskip}
+{}
+\titlespacing*{\chapter}{0pt}{0pt}{1.5\baselineskip}
+
 
 \newcommand{\frontmatter}{
 	\pagenumbering{roman}
