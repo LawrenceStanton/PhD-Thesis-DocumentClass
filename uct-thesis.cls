@@ -129,7 +129,7 @@
 
 \makeatletter
 \newcounter{reaction}
-\renewcommand{\thereaction}{R\,\thechapter.\arabic{reaction}}
+\renewcommand{\thereaction}{(R\,\thechapter.\arabic{reaction})}
 \@addtoreset{reaction}{chapter}
 \newenvironment{reaction}{
 	\refstepcounter{reaction}
